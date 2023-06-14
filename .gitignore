@@ -1,2 +1,4 @@
 *.bin
 .DS_Store
+data/studentaffairs-jhu-edu/prompt-completion-pairs.json
+data/studentaffairs-jhu-edu/data.json
