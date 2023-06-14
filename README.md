@@ -88,6 +88,7 @@ Text goes here.
 ## Known Issues
 - The ```data.json``` of ```ventures.jhu.edu``` stopped prematurely but contains 635472 completion-prompt pairs.
 - The ```data.json``` of ```e-catalogue.jhu.edu``` stopped prematurely but contains 21429394 completion-prompt pairs.
+- The ```success_links.txt``` of ```engineering.jhu.edu``` stopped prematurely due to file size/storage issues but contains 10638 links. 
 
 _Last Updated:_ 06/14/2023
 
