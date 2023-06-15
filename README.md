@@ -13,7 +13,7 @@ Text goes here.
 ## Directory Structure
 - `/root`
     - `/backend`
-        - `/data`
+        - `/data.nosync` 
             - `/studentaffairs-jhu-edu`
                 - `data.json` 
                 - `prompt-completion-pairs.json` 
@@ -29,24 +29,42 @@ Text goes here.
                 - `success_links.txt`
                 - `data.json` 
                 - `prompt-completion-pairs.json` 
-            - `/combined`
+            - `/engineering-jhu-edu`
+                - `error_links.txt`
+                - `success_links.txt`
                 - `data.json` 
                 - `prompt-completion-pairs.json`
+            - `/krieger-jhu-edu`
+                - `error_links.txt`
+                - `success_links.txt`
+                - `data.json` 
+                - `prompt-completion-pairs.json`
+            - `/library-jhu-edu`
+                - `error_links.txt`
+                - `success_links.txt`
+                - `data.json` 
+                - `prompt-completion-pairs.json`
+            - `/combined`
+                - `prompt-completion-pairs-combined.json`
         - `/api`
     - `/frontend`
     - `/notebooks`
         - `studentaffairs-jhu-edu.ipynb`
         - `ventures-jhu-edu.ipynb`
         - `e-catalogue-jhu-edu.ipynb`
+        - `engineering-jhu-edu.ipynb`
+        - `krieger-jhu-edu.ipynb`
+        - `library-jhu-edu.ipynb`
+        - `combine-json.ipynb`
     - `README.md`
     - `.gitignore`
 
 ## Statistics
 ### Summary
-- Number of links scraped: 24,301
-- Number of words scraped: 2,024,130,530
-- Number of prompt-completion pairs created: 24,323,486
-- Number of prompt-completion pairs used: 248,277
+- Number of links scraped: 109441
+- Number of words scraped: 2,609,883,969
+- Number of prompt-completion pairs created: 43,991,486
+- Number of prompt-completion pairs used: 370,237
 ### Subdomain Statistics
 - ```studentaffairs-jhu-edu```
     - Number of links scraped: 9404
@@ -64,15 +82,15 @@ Text goes here.
     - Number of prompt-completion pairs created: 21429394
     - Number of prompt-completion pairs used: 186804
 - ```engineering-jhu-edu```
-    - Number of links scraped:
-    - Number of words scraped:
-    - Number of prompt-completion pairs created: 
-    - Number of prompt-completion pairs used:
+    - Number of links scraped: 10638
+    - Number of words scraped: 122982232
+    - Number of prompt-completion pairs created: 3557565
+    - Number of prompt-completion pairs used: 53532
 - ```krieger-jhu-edu```
-    - Number of links scraped:
-    - Number of words scraped:
-    - Number of prompt-completion pairs created: 
-    - Number of prompt-completion pairs used:
+    - Number of links scraped: 74502
+    - Number of words scraped: 462771207
+    - Number of prompt-completion pairs created: 16110435
+    - Number of prompt-completion pairs used: 68428
 - ```library-jhu-edu```
     - Number of links scraped:
     - Number of words scraped:
@@ -89,6 +107,7 @@ Text goes here.
 - The ```data.json``` of ```ventures.jhu.edu``` stopped prematurely but contains 635472 completion-prompt pairs.
 - The ```data.json``` of ```e-catalogue.jhu.edu``` stopped prematurely but contains 21429394 completion-prompt pairs.
 - The ```success_links.txt``` of ```engineering.jhu.edu``` stopped prematurely due to file size/storage issues but contains 10638 links. 
+- The ```success_links.txt``` of ```library.jhu.edu``` stopped prematurely due to file size/storage issues but contains 63360 links.
 
 _Last Updated:_ 06/14/2023
 
