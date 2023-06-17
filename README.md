@@ -61,10 +61,10 @@ Text goes here.
 
 ## Statistics
 ### Summary
-- Number of links scraped: 109441
-- Number of words scraped: 2,609,883,969
-- Number of prompt-completion pairs created: 43,991,486
-- Number of prompt-completion pairs used: 370,237
+- Number of links scraped: 172,797
+- Number of words scraped: 3,056,951,405
+- Number of prompt-completion pairs created: 52,822,410
+- Number of prompt-completion pairs used: 712,985
 ### Subdomain Statistics
 - ```studentaffairs-jhu-edu```
     - Number of links scraped: 9404
@@ -92,10 +92,10 @@ Text goes here.
     - Number of prompt-completion pairs created: 16110435
     - Number of prompt-completion pairs used: 68428
 - ```library-jhu-edu```
-    - Number of links scraped:
-    - Number of words scraped:
-    - Number of prompt-completion pairs created: 
-    - Number of prompt-completion pairs used:
+    - Number of links scraped: 63356
+    - Number of words scraped: 447,067,436
+    - Number of prompt-completion pairs created: 8830924
+    - Number of prompt-completion pairs used: 342748
 
 ## File Notes
 - ```.json``` - files are ignored due to their large file size.
