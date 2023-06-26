@@ -1,6 +1,19 @@
 # JHU Chatbot
 ## Description
-Text goes here.
+JHU Chatbot is a GPT-3.5-turbo based chatbot fined-tuned on more than 3 trillion scraped texts from 6 subdomains of the Johns Hopkins University website. The chatbot is able to answer questions about the university, its programs, and its policies.
+
+Version: 0.1.0 (Beta). Created by Benjamin Chang and Larry Cai.
+
+## Sample Questions
+### Course Suggestions
+> **User:** What class should I take if I want to learn about Natural Language Processing?
+
+> **JHU Chatbot:** EN.601.465 Natural Language Processing
+
+### Policies and Procedures
+> **User:** I have been accused of academic dishonesty for the first time. What should I do to resolve my case?
+
+> **JHU Chatbot:** If you have been accused of academic dishonesty for the first time and you believe you are innocent, you should promptly review the facts of the case with the faculty member responsible for the course in which the misconduct allegedly occurred. If the faculty member believes that academic misconduct has occurred, the faculty member must first contact the Director of Advising or another member of Academic Affairs to determine whether the offense is a first offense. If it is a first offense, the faculty member may settle the case directly with you, i.e., the faculty member and you may reach an agreement on the resolution of the alleged misconduct.
 
 ## Websites Scraped
 1. [studentaffairs.jhu.edu](https://studentaffairs.jhu.edu/)
@@ -12,42 +25,8 @@ Text goes here.
 
 ## Directory Structure
 - `/root`
-    - `/backend`
-        - `/data.nosync` 
-            - `/studentaffairs-jhu-edu`
-                - `data.json` 
-                - `prompt-completion-pairs.json` 
-                - `error_links.txt`
-                - `success_links.txt`
-            - `/ventures-jhu-edu`
-                - `error_links.txt`
-                - `success_links.txt`
-                - `data.json` 
-                - `prompt-completion-pairs.json` 
-            - `/e-catalogue-jhu-edu`
-                - `error_links.txt`
-                - `success_links.txt`
-                - `data.json` 
-                - `prompt-completion-pairs.json` 
-            - `/engineering-jhu-edu`
-                - `error_links.txt`
-                - `success_links.txt`
-                - `data.json` 
-                - `prompt-completion-pairs.json`
-            - `/krieger-jhu-edu`
-                - `error_links.txt`
-                - `success_links.txt`
-                - `data.json` 
-                - `prompt-completion-pairs.json`
-            - `/library-jhu-edu`
-                - `error_links.txt`
-                - `success_links.txt`
-                - `data.json` 
-                - `prompt-completion-pairs.json`
-            - `/combined`
-                - `prompt-completion-pairs-combined.json`
-        - `/api`
-    - `/frontend`
+    - `/backend` (See README.md in /backend)
+    - `/frontend` (See README.md in /frontend)
     - `/notebooks`
         - `studentaffairs-jhu-edu.ipynb`
         - `ventures-jhu-edu.ipynb`
@@ -56,6 +35,7 @@ Text goes here.
         - `krieger-jhu-edu.ipynb`
         - `library-jhu-edu.ipynb`
         - `combine-json.ipynb`
+        - `create_embeddings.ipynb`
     - `README.md`
     - `.gitignore`
 
@@ -65,6 +45,7 @@ Text goes here.
 - Number of words scraped: 3,056,951,405
 - Number of prompt-completion pairs created: 52,822,410
 - Number of prompt-completion pairs used: 712,985
+
 ### Subdomain Statistics
 - ```studentaffairs-jhu-edu```
     - Number of links scraped: 9404
@@ -98,16 +79,17 @@ Text goes here.
     - Number of prompt-completion pairs used: 342748
 
 ## File Notes
-- ```.json``` - files are ignored due to their large file size.
-    - ```data.json``` - contains the raw prompt-completion dataset.
-    - ```prompt-completion-pairs.json``` - contains the cleaned prompt-completion dataset.
-- In ```ventures-jhu-edu```, data scraped but blocked by Cloudfare is removed. 
+- ```data.json``` - contains the raw prompt-completion dataset.
+- ```prompt-completion-pairs.json``` - contains the cleaned prompt-completion dataset.
 
 ## Known Issues
-- The ```data.json``` of ```ventures.jhu.edu``` stopped prematurely but contains 635472 completion-prompt pairs.
-- The ```data.json``` of ```e-catalogue.jhu.edu``` stopped prematurely but contains 21429394 completion-prompt pairs.
-- The ```success_links.txt``` of ```engineering.jhu.edu``` stopped prematurely due to file size/storage issues but contains 10638 links. 
-- The ```success_links.txt``` of ```library.jhu.edu``` stopped prematurely due to file size/storage issues but contains 63360 links.
+- When craeting ```data.json``` of ```ventures.jhu.edu```, program stopped prematurely but contains 635472 completion-prompt pairs.
+- When creating ```data.json``` of ```e-catalogue.jhu.edu```, program stopped prematurely but contains 21429394 completion-prompt pairs.
+- When creating ```success_links.txt``` of ```engineering.jhu.edu```, program stopped prematurely due to file size/storage issues but contains 10638 links. 
+- When creating ```success_links.txt``` of ```library.jhu.edu```, program stopped prematurely due to file size/storage issues but contains 63360 links.
 
-_Last Updated:_ 06/14/2023
+## Disclaimer
+JHU Chatbot is not affiliated with Johns Hopkins University. All information generated by JHU Chatbot is not guaranteed to be accurate. JHU Chatbot and its creaters are not responsible for any misinformation generated by the chatbot.
+
+_Last Updated:_ 06/26/2023
 
