@@ -83,4 +83,4 @@ def ask(
 
 #example question
 openai.api_key = "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"
-print(ask("What is the course Computer Vision about and what is the course number and prerequisites?"))
+print(ask("What are some good travel abroad programs? "))
