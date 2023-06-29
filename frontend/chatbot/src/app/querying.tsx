@@ -1,5 +1,5 @@
 import React, { useState, ChangeEvent, FormEvent } from "react";
-
+import "./globals.css";
 interface QueryInputProps {
   onQuerySubmit: (query: string) => void;
 }
@@ -20,14 +20,17 @@ const QueryInput = ({ onQuerySubmit }: QueryInputProps) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="user-input">
       <input
+        className="input-field"
         type="text"
         value={query}
         onChange={handleChange}
         placeholder="Enter your query..."
       />
-      <button type="submit">Submit</button>
+      <button type="submit" className="submit-button">
+        Submit
+      </button>
     </form>
   );
 };
