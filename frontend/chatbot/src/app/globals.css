@@ -1,24 +1,24 @@
+  body {
+    background-color: #01070d;
 
+  }
   .container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    position: relative;
   }
 
   .chat-container {
     display: flex;
     flex-direction: column;
-    border: 3px solid #199EF7;
+   /* border: 3px solid #199EF7;*/
     padding: 16px;
     height: 400px;
     overflow-y: auto;
   }
-  .logo {
-    width:300px;
-    height: auto;
-    margin-top:20px;
-  }
+  
   .message-bubble {
     background-color: #199EF7;
     border-radius: 50px;
@@ -42,8 +42,10 @@
   .input-field {
     padding: 8px;
     margin-right: 8px;
-    border: 3px solid #199EF7;
+    border: 1px solid #199EF7;
     width: 750px;
+    color: white;
+    background-color: #01070d;
   }
   
   .submit-button {
@@ -55,4 +57,10 @@
   .submit-button:hover {
     box-shadow: 1px 3px 5px rgba(0,0,0,.5);
   }
+  #top-logo {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+  }
+  
   
