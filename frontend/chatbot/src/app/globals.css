@@ -9,13 +9,19 @@
     height: 100vh;
     position: relative;
   }
-
+  
   .chat-container {
     display: flex;
     flex-direction: column;
    /* border: 3px solid #199EF7;*/
     padding: 16px;
     height: 400px;
+    justify-content: flex-end;
+    
+  }
+  .chat-messages {
+    display: flex;
+    flex-direction: column;
     overflow-y: auto;
   }
   

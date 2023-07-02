@@ -13,13 +13,15 @@ const ChatMessageList = ({ messages }) => {
   }, [messages]);
 
   return (
-        <div className="chat-container">
-            
+    <div className="chat-container">
+      <div className="chat-messages">
         {messages.map((message, index) => (
             <div key={index} className="message-bubble">{message}</div>
         ))}
-        <div ref = {messageEndRef}/>
-        </div>
+      
+      <div ref = {messageEndRef}/>
+      </div>
+    </div>
   );
 };
 
