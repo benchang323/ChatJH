@@ -1,12 +1,23 @@
   body {
     background-color: #01070d;
   }
-  .container { /* align everything to the middle */
+  .container-main { /* align everything to the middle */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+  }
+  .chat-content {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     position: relative;
+    order: 2
+  }
+  .container {
+    order:2
   }
   
   .chat-container { /* The chat box where messages show up */
@@ -66,6 +77,10 @@
     position: absolute;
     top: 0px;
     right: 0px;
+  }
+  .side {
+    Display: flex;
+    color: white;
   }
   
   

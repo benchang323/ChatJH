@@ -22,7 +22,7 @@ const ChatBot = () => {
   };
 
   return (
-    <div>
+    <div className="container">
       <ChatMessageList messages={chatMessages} /> {/* chat messages */}
       {/* Other chatbot components */}
       <QueryInput onQuerySubmit={handleQuerySubmit} />{" "}
