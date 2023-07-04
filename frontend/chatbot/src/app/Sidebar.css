@@ -2,10 +2,10 @@
     order: 1;
 }
 .sidebar {
-    display: flex-start;
+    top:-20px;
     width: 400px;
     height: 100vh;
-    background-color: magenta;
+    background-color: rgb(106, 0, 255);
 }
 .sidebarChat {
     padding: 20px;
@@ -29,4 +29,28 @@
 }
 .sidechat_timestamp {
     color: white;
+    margin-left: 285px;
+}
+.sidebar_chats {
+    position:absolute;
+    border: solid;
+    border-color:rgb(106, 0, 255);
+    border-radius: 1px;
+    top: 200px;
+    width: 394px;
+}
+.sidebar_chats:hover {
+    border-color:blue;
+}
+#plus-image-button {
+    position: absolute;left:340px; top: 40px;
+    color: lightgray;
+}
+#close-sidebar-button {
+    position: absolute;left:340px;top: 70px;
+
+}
+#sidebar-label {
+    position: relative;left:40px; top:40px; 
+    font-size: 2em;
 }

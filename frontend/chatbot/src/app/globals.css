@@ -1,12 +1,13 @@
   body {
-    background-color: #01070d;
+    background-color: #1c2833;
   }
   .container-main { /* align everything to the middle */
     display: flex;
     justify-content: flex-start;
-    align-items: center;
-    height: 100vh;
-    position: relative;
+  }
+  .separator {
+    order: 2;
+    width : 200px;
   }
   .chat-content {
     display: flex;
@@ -14,10 +15,13 @@
     align-items: center;
     height: 100vh;
     position: relative;
-    order: 2
+    order: 3
+  }
+  .Sidebar-content {
+    /*dummy*/
   }
   .container {
-    order:2
+    order:3
   }
   
   .chat-container { /* The chat box where messages show up */
@@ -75,7 +79,7 @@
   }
   #top-logo {
     position: absolute;
-    top: 0px;
+    top: 40px;
     right: 0px;
   }
   .side {
