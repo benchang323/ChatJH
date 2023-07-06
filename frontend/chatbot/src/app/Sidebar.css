@@ -6,11 +6,18 @@
     width: 400px;
     height: 100vh;
     background-color: rgb(106, 0, 255);
+    overflow-y: auto;
 }
 .sidebarChat {
     padding: 20px;
     cursor: pointer;
     align-self: flex-start;
+    position:relative;
+    border: solid;
+    border-color:rgb(106, 0, 255);
+    border-radius: 3px;
+    top: 100px;
+    width: 354px;
 }
 
 .sidebarChat__info h2 {
@@ -31,23 +38,16 @@
     color: white;
     margin-left: 285px;
 }
-.sidebar_chats {
-    position:absolute;
-    border: solid;
-    border-color:rgb(106, 0, 255);
-    border-radius: 1px;
-    top: 200px;
-    width: 394px;
-}
-.sidebar_chats:hover {
+
+.sidebarChat:hover {
     border-color:blue;
 }
 #plus-image-button {
-    position: absolute;left:340px; top: 40px;
+    position: relative;left:30px; top: 40px;
     color: lightgray;
 }
 #close-sidebar-button {
-    position: absolute;left:340px;top: 70px;
+    position: relative;left:30px;top: 40px;
 
 }
 #sidebar-label {

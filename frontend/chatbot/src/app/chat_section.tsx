@@ -1,4 +1,3 @@
-// chat_section.tsx
 import React from "react";
 import QueryInput from "./querying";
 import ChatMessageList from "./ChatMessageList";
@@ -8,7 +7,9 @@ interface ChatSectionProps {
   chatState: {
     chatHistory: string[];
     addToChatHistory: (message: string) => void;
-    resetChatHistory: () => void;
+    resetChatHistory: (messages: string[]) => void;
+    resetMainChat: () => void;
+    allChatData: string[][];
   };
 }
 
@@ -24,7 +25,7 @@ const ChatBot: React.FC<ChatSectionProps> = ({ chatState }) => {
 
   const handleResetChat = () => {
     // Reset chat box
-    chatState.resetChatHistory();
+    chatState.resetMainChat();
   };
 
   return (

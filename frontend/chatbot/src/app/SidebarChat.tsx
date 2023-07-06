@@ -1,9 +1,13 @@
 import React from "react";
 import "./Sidebar.css";
+
 interface Props {
-  prev_chat: React.ReactNode[];
+  chat: string;
+  onClick: () => void;
+  isCurrentChat: boolean;
 }
-const SidebarChat = ({ prev_chat }: Props) => {
+
+const SidebarChat: React.FC<Props> = ({ chat, onClick, isCurrentChat }) => {
   const previewText = (text: string, textLength: number) => {
     if (!text) return "No messages";
 
@@ -13,21 +17,22 @@ const SidebarChat = ({ prev_chat }: Props) => {
       return text.substring(0, textLength) + "...";
     }
   };
-  const renderPreviewText = (chat: string[], textLength: number) => {
+
+  const renderPreviewText = (chat: string, textLength: number) => {
     if (!chat) {
       return "...";
     } else {
-      const lastMessage = chat[chat.length - 1];
-      return previewText(lastMessage, textLength);
+      return previewText(chat, textLength);
     }
   };
 
   return (
-    <div className="sidebarChat">
+    <div className="sidebarChat" onClick={onClick}>
       <div className="sidechat_timestamp">July 2nd</div>
       <div className="sidebarChat__info">
-        <h2> Old Chat</h2>
-        <p>{renderPreviewText(prev_chat as string[], 20)}</p>
+        {isCurrentChat && <h2>Current Chat</h2>}
+        {!isCurrentChat && <h2>Old Chat</h2>}
+        <p>{renderPreviewText(chat, 20)}</p>
       </div>
     </div>
   );

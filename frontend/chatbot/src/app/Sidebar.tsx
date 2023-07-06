@@ -1,15 +1,25 @@
-"use client";
-import React from "react";
+import React, { useState } from "react";
 import SidebarChat from "./SidebarChat";
 import "./Sidebar.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { faRectangleXmark } from "@fortawesome/free-solid-svg-icons";
 import { IconButton } from "@material-ui/core";
+
 interface Props {
-  chatHistory: React.ReactNode[];
+  chatHistory: string[];
+  handleAddChat: () => void;
+  sideChats: string[];
+  //  chatData: string [][];
+  handleChatSwitch: (index: number) => void;
 }
-const Sidebar = ({ chatHistory }: Props) => {
+
+const Sidebar = ({
+  chatHistory,
+  handleAddChat,
+  sideChats,
+  handleChatSwitch,
+}: Props) => {
   return (
     <div className="sidebar">
       <div className="sidebar__header">
@@ -18,7 +28,7 @@ const Sidebar = ({ chatHistory }: Props) => {
         </div>
         <div className="sidebar__headerRight">
           {/*put search icons here*/}
-          <IconButton id="plus-image-button">
+          <IconButton id="plus-image-button" onClick={handleAddChat}>
             <FontAwesomeIcon icon={faPlus} />
           </IconButton>
           <IconButton id="close-sidebar-button">
@@ -27,7 +37,21 @@ const Sidebar = ({ chatHistory }: Props) => {
         </div>
       </div>
       <div className="sidebar_chats">
-        <SidebarChat prev_chat={chatHistory}></SidebarChat>
+        <SidebarChat
+          chat={chatHistory[chatHistory.length - 1]}
+          onClick={() => {}}
+          isCurrentChat={true}
+        />
+        {sideChats.map((chat, index) => (
+          <SidebarChat
+            key={index}
+            chat={chat}
+            onClick={() => handleChatSwitch(index)}
+            isCurrentChat={false}
+          />
+        ))}
+
+        {/* Render other sidebar chats */}
       </div>
     </div>
   );

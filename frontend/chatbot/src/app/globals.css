@@ -17,9 +17,6 @@
     position: relative;
     order: 3
   }
-  .Sidebar-content {
-    /*dummy*/
-  }
   .container {
     order:3
   }
@@ -79,8 +76,9 @@
   }
   #top-logo {
     position: absolute;
-    top: 40px;
+    bottom: 0px;
     right: 0px;
+    
   }
   .side {
     Display: flex;
