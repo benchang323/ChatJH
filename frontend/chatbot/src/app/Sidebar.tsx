@@ -10,7 +10,6 @@ interface Props {
   chatHistory: string[];
   handleAddChat: () => void;
   sideChats: string[];
-  //  chatData: string [][];
   handleChatSwitch: (index: number) => void;
 }
 
@@ -27,7 +26,7 @@ const Sidebar = ({
           <h2 id="sidebar-label">Old Chats</h2>
         </div>
         <div className="sidebar__headerRight">
-          {/*put search icons here*/}
+          {/*put necessary icons here*/}
           <IconButton id="plus-image-button" onClick={handleAddChat}>
             <FontAwesomeIcon icon={faPlus} />
           </IconButton>
@@ -37,11 +36,13 @@ const Sidebar = ({
         </div>
       </div>
       <div className="sidebar_chats">
+        {/*current chat box*/}
         <SidebarChat
           chat={chatHistory[chatHistory.length - 1]}
           onClick={() => {}}
           isCurrentChat={true}
-        />
+        />{" "}
+        {/*old chat boxes */}
         {sideChats.map((chat, index) => (
           <SidebarChat
             key={index}
@@ -50,8 +51,6 @@ const Sidebar = ({
             isCurrentChat={false}
           />
         ))}
-
-        {/* Render other sidebar chats */}
       </div>
     </div>
   );

@@ -18,21 +18,19 @@ const App: React.FC = () => {
   const chatData = chatState.allChatData;
 
   const handleAddChat = () => {
-    const newChatSegment = [...chatState.chatHistory];
+    //adding a brand new fresh chat
     chatState.resetChatHistory(prevMessage);
     setSidebarChats((prevChats) => [
       prevMessage[prevMessage.length - 1],
       ...prevChats,
     ]);
-    //TODO: check if the console acutally logs it right and that allChatData contains the full history
-    // then what you are going to do is keep track of an index for every time a new chat is made, and whenever an old chat is clicked
-    //we have a map of the index that points to the old chat history stored in the index of allChatData
 
     console.log("adding new history box");
     console.log(chatData);
   };
 
   const handleChatSwitch = (index: number) => {
+    //switching to old chats
     chatState.switchChat(index);
   };
 

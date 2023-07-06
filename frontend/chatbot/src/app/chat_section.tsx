@@ -31,11 +31,9 @@ const ChatBot: React.FC<ChatSectionProps> = ({ chatState }) => {
   return (
     <div className="container">
       <ChatMessageList messages={chatState.chatHistory} /> {/* chat messages */}
-      {/* Other chatbot components */}
       <QueryInput onQuerySubmit={handleQuerySubmit} />{" "}
       {/* make request to respond to query */}
-      <ResetChat onResetChat={handleResetChat} />
-      {/* Other chatbot components */}
+      <ResetChat onResetChat={handleResetChat} /> {/* reset chat button */}
     </div>
   );
 };

@@ -4,7 +4,7 @@ import "./Sidebar.css";
 interface Props {
   chat: string;
   onClick: () => void;
-  isCurrentChat: boolean;
+  isCurrentChat: boolean; //differentiate if the sidebar chatbox is current or old
 }
 
 const SidebarChat: React.FC<Props> = ({ chat, onClick, isCurrentChat }) => {
@@ -14,7 +14,7 @@ const SidebarChat: React.FC<Props> = ({ chat, onClick, isCurrentChat }) => {
     if (text.length <= textLength) {
       return text;
     } else {
-      return text.substring(0, textLength) + "...";
+      return text.substring(0, textLength) + "..."; //show a short preview in the sidebar for each old chat
     }
   };
 
