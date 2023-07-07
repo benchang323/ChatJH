@@ -8,6 +8,24 @@ interface Props {
 }
 
 const SidebarChat: React.FC<Props> = ({ chat, onClick, isCurrentChat }) => {
+  const months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+
+  const d = new Date();
+  let month = months[d.getMonth()];
+
   const previewText = (text: string, textLength: number) => {
     if (!text) return "No messages";
 
@@ -28,7 +46,9 @@ const SidebarChat: React.FC<Props> = ({ chat, onClick, isCurrentChat }) => {
 
   return (
     <div className="sidebarChat" onClick={onClick}>
-      <div className="sidechat_timestamp">July 2nd</div>
+      <div className="sidechat_timestamp">
+        {month} {d.getDate()}
+      </div>
       <div className="sidebarChat__info">
         {isCurrentChat && <h2>Current Chat</h2>}
         {!isCurrentChat && <h2>Old Chat</h2>}
