@@ -1,10 +1,11 @@
-# JHU Chatbot - Frontend
+# JHU Chatbot - Frontend Stuff
 
 ## Directory Structure
+
 - `/frontend`
-    - `/node_modules`
-    - `/public`
-        - `/favicon.ico`
-        - `/index.html`
-        - `/manifest.json`
-        - `/robots.txt`
+  - `/node_modules`
+  - `/public`
+    - `/favicon.ico`
+    - `/index.html`
+    - `/manifest.json`
+    - `/robots.txt`
