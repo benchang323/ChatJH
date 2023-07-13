@@ -2,7 +2,7 @@
 
 ## Description
 
-JHU Chatbot is a GPT-3.5-turbo based chatbot fined-tuned on more than 3 trillion scraped texts from 6 subdomains of the Johns Hopkins University website. The chatbot is able to answer questions about the university, its programs, and its policies.
+JHU Chatbot is a GPT-4.0 based chatbot fined-tuned on more than 3 trillion scraped texts (700K+ QA pairs) from 6 subdomains of the Johns Hopkins University website. The chatbot is able to answer questions about the university, its programs, and its policies.
 
 Version: 0.1.0 (Beta). Created by Benjamin Chang and Larry Cai.
 
@@ -20,7 +20,7 @@ Version: 0.1.0 (Beta). Created by Benjamin Chang and Larry Cai.
 
 > **JHU Chatbot:** If you have been accused of academic dishonesty for the first time and you believe you are innocent, you should promptly review the facts of the case with the faculty member responsible for the course in which the misconduct allegedly occurred. If the faculty member believes that academic misconduct has occurred, the faculty member must first contact the Director of Advising or another member of Academic Affairs to determine whether the offense is a first offense. If it is a first offense, the faculty member may settle the case directly with you, i.e., the faculty member and you may reach an agreement on the resolution of the alleged misconduct.
 
-## Websites Scraped
+## JHU Subdomains Scraped
 
 1. [studentaffairs.jhu.edu](https://studentaffairs.jhu.edu/)
 2. [ventures.jhu.edu](https://ventures.jhu.edu/)
