@@ -42,8 +42,8 @@ Version: 0.1.0 (Beta). Created by Benjamin Chang and Larry Cai.
     - `krieger-jhu-edu.ipynb`
     - `library-jhu-edu.ipynb`
     - `combine-json.ipynb`
-    - `create-embeddings.ipynb`
-    - `test-chatbot.ipynb`
+    - `create-embeddings.ipynb` (.gitignore)
+    - `test-chatbot.ipynb` (.gitignore)
   - `README.md`
   - `devnotes.md`
   - `requirements.txt`

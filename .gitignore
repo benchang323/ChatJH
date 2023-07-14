@@ -2,4 +2,5 @@
 .DS_Store
 *.json
 backend/settings.py
-notebooks
+notebooks/create-embeddings.ipynb
+notebooks/test-chatbot.ipynb

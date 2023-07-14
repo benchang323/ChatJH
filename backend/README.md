@@ -6,7 +6,7 @@
         - `chatbot.py`
     - `README.md`
     - `app.py`
-    - `settings.py`
+    - `settings.py` (.gitignore)
     - `/data.nosync` (Available Upon Request)
         - `/studentaffairs-jhu-edu`
             - `data.json` 
