@@ -1,8 +1,8 @@
-# JHU Chatbot
+# ChatJH - A JHU-based Chatbot For All Your Questions!
 
 ## Description
 
-JHU Chatbot is a GPT-4.0 based chatbot fined-tuned on more than 3 trillion scraped texts (700K+ QA pairs) from 6 subdomains of the Johns Hopkins University website. The chatbot is able to answer questions about the university, its programs, and its policies.
+JHU Chatbot is a GPT-3.5 based chatbot fined-tuned on more than 3 trillion scraped texts (700K+ QA pairs) from 6 subdomains of the Johns Hopkins University website. The chatbot is able to answer questions about the university, its programs, and its policies.
 
 Version: 0.1.0 (Beta). Created by Benjamin Chang and Larry Cai.
 
@@ -102,6 +102,8 @@ Version: 0.1.0 (Beta). Created by Benjamin Chang and Larry Cai.
 - When creating `data.json` of `e-catalogue.jhu.edu`, program stopped prematurely but contains 21429394 completion-prompt pairs.
 - When creating `success_links.txt` of `engineering.jhu.edu`, program stopped prematurely due to file size/storage issues but contains 10638 links.
 - When creating `success_links.txt` of `library.jhu.edu`, program stopped prematurely due to file size/storage issues but contains 63360 links.
+
+If you discover a bug or would like to recommend a feature, please open an issue ticket!
 
 ## Disclaimer
 
