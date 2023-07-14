@@ -7,7 +7,7 @@
     - `README.md`
     - `app.py`
     - `settings.py`
-    - `/data.nosync` 
+    - `/data.nosync` (Available Upon Request)
         - `/studentaffairs-jhu-edu`
             - `data.json` 
             - `prompt-completion-pairs.json` 
