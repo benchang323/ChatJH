@@ -1,4 +1,4 @@
-# JHU Chatbot
+# ChatJH - A JHU-based Chatbot For All Your Questions!
 
 ## Description
 
