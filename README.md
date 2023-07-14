@@ -2,7 +2,7 @@
 
 ## Description
 
-JHU Chatbot is a GPT-4.0 based chatbot fined-tuned on more than 3 trillion scraped texts (700K+ QA pairs) from 6 subdomains of the Johns Hopkins University website. The chatbot is able to answer questions about the university, its programs, and its policies.
+JHU Chatbot is a GPT-3.5 based chatbot fined-tuned on more than 3 trillion scraped texts (700K+ QA pairs) from 6 subdomains of the Johns Hopkins University website. The chatbot is able to answer questions about the university, its programs, and its policies.
 
 Version: 0.1.0 (Beta). Created by Benjamin Chang and Larry Cai.
 
