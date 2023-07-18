@@ -3,17 +3,32 @@ import { useState, useEffect } from "react";
 interface ChatState {
   chatHistory: string[];
   addToChatHistory: (message: string) => void;
-  resetChatHistory: (messages: string[]) => void;
+  resetChatHistory: () => void;
   resetMainChat: () => void;
   allChatData: string[][];
   switchChat: (index: number) => void;
 }
 
-
-
-
 export const useChatState = (): ChatState => {
   const [chatHistory, setChatHistory] = useState<string[]>([]);
+  const [allChatData, setAllChatData] = useState<string[][]>([]);
+
+  const addToChatHistory = (message: string) => {
+    setChatHistory((prevHistory) => [...prevHistory, message]);
+  };
+
+  const resetChatHistory = () => {
+    setAllChatData((chatData) => [...chatData, chatHistory]);
+    setChatHistory([]);
+  };
+
+  const resetMainChat = () => {
+    setChatHistory([]);
+  };
+
+  const switchChat = (index: number) => {
+    setChatHistory(allChatData[allChatData.length - 1 - index]);
+  };
 
   useEffect(() => {
     const storedChatHistory = sessionStorage.getItem("chatHistory");
@@ -21,19 +36,6 @@ export const useChatState = (): ChatState => {
       setChatHistory(JSON.parse(storedChatHistory));
     }
   }, []);
-
-  const addToChatHistory = (message: string) => {
-    setChatHistory((prevHistory) => [...prevHistory, message]);
-  };
-
-  const resetChatHistory = () => {
-    setChatHistory([]);
-    sessionStorage.removeItem("chatHistory");
-  };
-
-  const resetMainChat = () => {
-    setChatHistory([]);
-  };
 
   useEffect(() => {
     sessionStorage.setItem("chatHistory", JSON.stringify(chatHistory));
@@ -44,7 +46,7 @@ export const useChatState = (): ChatState => {
     addToChatHistory,
     resetChatHistory,
     resetMainChat,
-    allChatData: [],
-    switchChat: () => {},
+    allChatData,
+    switchChat,
   };
 };

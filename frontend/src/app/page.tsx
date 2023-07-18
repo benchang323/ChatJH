@@ -1,4 +1,3 @@
-// page.tsx
 "use client";
 import React, { useState, useEffect } from "react";
 import ChatBot from "./chat_section";
@@ -7,30 +6,24 @@ import logo from "./jhlogo.png";
 import Sidebar from "./Sidebar";
 import "./Sidebar.css";
 
-import { useChatState } from "./chatState";
+import { useChatState } from "./chatState.client";
+
 const App: React.FC = () => {
   const chatState = useChatState();
 
   const [sidebarChats, setSidebarChats] = useState<string[]>([]);
 
-  const prevMessage = chatState.chatHistory;
-
-  const chatData = chatState.allChatData;
-
   const handleAddChat = () => {
-    //adding a brand new fresh chat
-    chatState.resetChatHistory(prevMessage);
+    // Adding a brand new fresh chat
+    chatState.resetChatHistory();
     setSidebarChats((prevChats) => [
-      prevMessage[prevMessage.length - 1],
+      chatState.chatHistory[chatState.chatHistory.length - 1],
       ...prevChats,
     ]);
-
-    console.log("adding new history box");
-    console.log(chatData);
   };
 
   const handleChatSwitch = (index: number) => {
-    //switching to old chats
+    // Switching to old chats
     chatState.switchChat(index);
   };
 
