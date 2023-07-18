@@ -1,17 +1,33 @@
+# chatbot.py
 # Import Dependencies
 import openai
 import tiktoken
-import clickhouse_connect
+from clickhouse_driver import Client
 import settings
 
 # Client Connection
-client = clickhouse_connect.get_client(**settings.CLICKHOUSE_CONNECTION_DETAILS)
+client = Client(host=settings.CLICKHOUSE_CONNECTION_DETAILS["host"],
+                    port=settings.CLICKHOUSE_CONNECTION_DETAILS["port"],
+                    user=settings.CLICKHOUSE_CONNECTION_DETAILS["username"],
+                    password=settings.CLICKHOUSE_CONNECTION_DETAILS["password"])
+
+# print host, port, user, password
+print(settings.CLICKHOUSE_CONNECTION_DETAILS["host"])
+print(settings.CLICKHOUSE_CONNECTION_DETAILS["port"])
+print(settings.CLICKHOUSE_CONNECTION_DETAILS["username"])
+print(settings.CLICKHOUSE_CONNECTION_DETAILS["password"])
 
 # OpenAI API key
 openai.api_key = settings.OPENAI_API_KEY
 
 # Configurations
 GPT_MODEL = "gpt-3.5-turbo"
+
+def test_connection():
+    try:
+        print(f"Connection to ClickHouse server successful")
+    except Exception as e:
+        print(f"Connection to ClickHouse server failed")
 
 def strings_ranked_by_relatedness(query: str) -> list[str]:
     """
@@ -32,15 +48,21 @@ def strings_ranked_by_relatedness(query: str) -> list[str]:
 
     # Query for Top K Similar Cases
     top_k = 10
-    results = client.query(f"""
-        SELECT id, text, distance(embedding, {embed}) as dist
-        FROM default.hopkins_art
-        ORDER BY dist
-        LIMIT {top_k}
-    """)
+    results = []  # Initialize the variable as an empty list
+
+    try:
+        results = client.execute(f"""
+            SELECT id, text, distance(embedding, {embed}) as dist
+            FROM default.hopkins_art
+            ORDER BY dist
+            LIMIT {top_k}
+        """)
+    except Exception as e: 
+        print(f"Error: Query failed - {e}")
 
     # Top K Results
-    return results.named_results()
+    return results
+
 
 
 def num_tokens(text: str, model: str = GPT_MODEL) -> int:
@@ -113,3 +135,5 @@ def ask(query: str, model: str = GPT_MODEL, token_budget: int = 4096 - 500, prin
     )
     response_message = response["choices"][0]["message"]["content"]
     return response_message
+
+test_connection()

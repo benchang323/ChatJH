@@ -1,3 +1,4 @@
+// page.tsx
 "use client";
 import React, { useState, useEffect } from "react";
 import ChatBot from "./chat_section";
@@ -5,7 +6,6 @@ import "./globals.css";
 import logo from "./jhlogo.png";
 import Sidebar from "./Sidebar";
 import "./Sidebar.css";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import { useChatState } from "./chatState";
 const App: React.FC = () => {

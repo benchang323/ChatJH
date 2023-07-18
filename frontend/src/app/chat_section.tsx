@@ -1,7 +1,8 @@
-import React from "react";
+// chat_section.tsx
 import QueryInput from "./querying";
 import ChatMessageList from "./ChatMessageList";
 import ResetChat from "./ResetChat";
+import React, { useState } from 'react';
 
 interface ChatSectionProps {
   chatState: {
@@ -14,13 +15,34 @@ interface ChatSectionProps {
 }
 
 const ChatBot: React.FC<ChatSectionProps> = ({ chatState }) => {
-  const handleQuerySubmit = (query: string) => {
-    // Perform actions or logic with the submitted query
-    // For example, send the query to an API, update the chat messages, etc.
-    console.log("Submitted query:", query);
+  // Add a piece of state to hold any errors
+  const [error, setError] = useState<string | null>(null);
 
-    // Update the chat messages with the new query
-    chatState.addToChatHistory(query);
+  const handleQuerySubmit = async (query: string) => {
+    try {
+      // Send a POST request to your backend
+      const response = await fetch('http://localhost:8000/ask', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ query }), // The body of the request is the query, stringified
+      });
+
+      if (!response.ok) {
+        throw new Error('Response not ok');
+      }
+
+      // Parse the JSON response
+      const data = await response.json();
+
+      // Update the chat messages with the new query and response
+      chatState.addToChatHistory(query);
+      chatState.addToChatHistory(data.response);
+    } catch (err) {
+      console.error('An error occurred:', err);
+      setError('An error occurred, please try again.');
+    }
   };
 
   const handleResetChat = () => {

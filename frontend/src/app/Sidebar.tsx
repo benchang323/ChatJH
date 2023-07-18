@@ -1,3 +1,4 @@
+// sidebar.tsx
 import React, { useState } from "react";
 import SidebarChat from "./SidebarChat";
 import "./Sidebar.css";

@@ -7,7 +7,7 @@
     - `README.md`
     - `app.py`
     - `settings.py` (.gitignore)
-    - `/data.nosync` (Available Upon Request)
+    - `/data.nosync` 
         - `/studentaffairs-jhu-edu`
             - `data.json` 
             - `prompt-completion-pairs.json` 

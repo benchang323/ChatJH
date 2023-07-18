@@ -1,3 +1,4 @@
+// querying.tsx
 import React, { useState, ChangeEvent, FormEvent } from "react";
 import "./globals.css";
 interface QueryInputProps {

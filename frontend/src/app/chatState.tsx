@@ -1,4 +1,4 @@
-// chatState.ts
+// chatState.tsx
 import { useState, useEffect } from "react";
 
 interface ChatState {
