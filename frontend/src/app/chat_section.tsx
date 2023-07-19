@@ -1,4 +1,3 @@
-// chat_section.tsx
 import QueryInput from "./querying";
 import ChatMessageList from "./ChatMessageList";
 import ResetChat from "./ResetChat";

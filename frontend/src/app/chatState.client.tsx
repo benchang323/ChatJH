@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-
 interface ChatState {
   chatHistory: string[];
   messageSource: boolean[];

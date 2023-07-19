@@ -85,7 +85,7 @@
     color: white;
   }
   
-  .bot-message {
+  .bot-message { /* bot message styling so it comes out on th left */
     background-color: #444649;
     margin-left: 8px;
     align-self: flex-start;
