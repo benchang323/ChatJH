@@ -2,7 +2,8 @@ import { useState, useEffect } from "react";
 
 interface ChatState {
   chatHistory: string[];
-  addToChatHistory: (message: string) => void;
+  messageSource: boolean[];
+  addToChatHistory: (message: string, isBotMessage: boolean) => void;
   resetChatHistory: () => void;
   resetMainChat: () => void;
   allChatData: string[][];
@@ -12,18 +13,22 @@ interface ChatState {
 export const useChatState = (): ChatState => {
   const [chatHistory, setChatHistory] = useState<string[]>([]);
   const [allChatData, setAllChatData] = useState<string[][]>([]);
+  const [messageSource, setMessageSource] = useState<boolean[]>([]);
 
-  const addToChatHistory = (message: string) => {
+  const addToChatHistory = (message: string, isBotMessage: boolean) => {
     setChatHistory((prevHistory) => [...prevHistory, message]);
+    setMessageSource((prevSources) => [...prevSources, isBotMessage]);
   };
 
   const resetChatHistory = () => {
     setAllChatData((chatData) => [...chatData, chatHistory]);
+    //might need to do the same for messagesource
     setChatHistory([]);
   };
 
   const resetMainChat = () => {
     setChatHistory([]);
+    setMessageSource([]);
   };
 
   const switchChat = (index: number) => {
@@ -32,17 +37,21 @@ export const useChatState = (): ChatState => {
 
   useEffect(() => {
     const storedChatHistory = sessionStorage.getItem("chatHistory");
+    const storedMessageSource = sessionStorage.getItem("messageSource");
     if (storedChatHistory) {
       setChatHistory(JSON.parse(storedChatHistory));
+      setMessageSource(JSON.parse(storedMessageSource));
     }
   }, []);
 
   useEffect(() => {
     sessionStorage.setItem("chatHistory", JSON.stringify(chatHistory));
+    sessionStorage.setItem("messageSource", JSON.stringify(messageSource));
   }, [chatHistory]);
 
   return {
     chatHistory,
+    messageSource,
     addToChatHistory,
     resetChatHistory,
     resetMainChat,

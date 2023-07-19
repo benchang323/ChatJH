@@ -43,7 +43,7 @@
     margin-bottom: 20px;
     align-self:flex-end;
     word-wrap:break-word;
-    max-width: 40%;
+    max-width: 30%;
     color: white;
     font-family: "Open Sans", sans-serif;
   }
@@ -60,7 +60,7 @@
     padding: 8px;
     margin-right: 8px;
     border: 1px solid #199EF7;
-    width: 750px;
+    width: 900px;
     color: white;
     background-color: #01070d;
   }
@@ -85,4 +85,8 @@
     color: white;
   }
   
-  
+  .bot-message {
+    background-color: #444649;
+    margin-left: 8px;
+    align-self: flex-start;
+  }
