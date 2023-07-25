@@ -11,12 +11,6 @@ client = Client(host=settings.CLICKHOUSE_CONNECTION_DETAILS["host"],
                     user=settings.CLICKHOUSE_CONNECTION_DETAILS["username"],
                     password=settings.CLICKHOUSE_CONNECTION_DETAILS["password"])
 
-# print host, port, user, password
-print(settings.CLICKHOUSE_CONNECTION_DETAILS["host"])
-print(settings.CLICKHOUSE_CONNECTION_DETAILS["port"])
-print(settings.CLICKHOUSE_CONNECTION_DETAILS["username"])
-print(settings.CLICKHOUSE_CONNECTION_DETAILS["password"])
-
 # OpenAI API key
 openai.api_key = settings.OPENAI_API_KEY
 
