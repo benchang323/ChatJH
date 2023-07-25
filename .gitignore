@@ -4,3 +4,4 @@
 backend/settings.py
 notebooks/create-embeddings.ipynb
 notebooks/test-chatbot.ipynb
+data.nosync
